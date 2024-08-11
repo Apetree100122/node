@@ -1,20 +1,21 @@
-version: "3.5"
-
+version: 4
 services:
-
   alice:
-    build: .
-    # Note: Instead of using `dhxdocker/datahighway:latest` from Docker Hub, which
+    build: .  # Note: Instead of using `dhxdocker/datahighway:latest` from Docker Hub, which
     # may reflects the latest version on Github, during development we want to build
-    # a Docker container using the Dockerfile, which contains the latest local changes of our current branch.
+    # a Docker container using the Dockerfile, which contains the latest local changes
+    # of our current branch.
     # Run docker-compose -f docker-compose-dev.yml build --no-cache to build and create a new image.
     image: dhxdocker/datahighway:latest
     env_file:
       - .env
     ports:
-      - 30333:30333 # TCP
-      - 9944:9944 # WS
-      - 9933:9933 # RPC
+      - 30333:30333 
+      # TCP
+      - 9944:9944
+      # WS
+      - 9933:9933 
+      # RPC
     volumes:
       - basePath:/tmp
       - ./scripts:/dhx/node/scripts
@@ -22,7 +23,6 @@ services:
     restart: always
     entrypoint:
       - ./docker-entrypoint-alice.sh
-
   bob:
     image: dhxdocker/datahighway:latest
     env_file:
@@ -38,7 +38,6 @@ services:
     restart: always
     entrypoint:
       - ./docker-entrypoint-bob.sh
-
   charlie:
     image: dhxdocker/datahighway:latest
     env_file:
@@ -54,7 +53,6 @@ services:
     restart: always
     entrypoint:
       - ./docker-entrypoint-charlie.sh
-
   dave:
     image: dhxdocker/datahighway:latest
     env_file:
@@ -70,7 +68,6 @@ services:
     restart: always
     entrypoint:
       - ./docker-entrypoint-dave.sh
-
   eve:
     image: dhxdocker/datahighway:latest
     env_file:
@@ -86,6 +83,5 @@ services:
     restart: always
     entrypoint:
       - ./docker-entrypoint-eve.sh
-
 volumes:
   basePath:
