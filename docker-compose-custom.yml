@@ -1,5 +1,4 @@
-version: "3"
-
+version: 4
 services:
   node-1:
     image: dhxdocker/datahighway:latest
@@ -24,7 +23,7 @@ services:
       - 9934:9933
     volumes:
       - ./scripts:/dhx/node/scripts
-    restart: always
+    restart:
     entrypoint:
       - ./docker-entrypoint-node-2.sh
   node-3:
@@ -50,7 +49,7 @@ services:
       - 9936:9933
     volumes:
       - ./scripts:/dhx/node/scripts
-    restart: always
+    restart:
     entrypoint:
       - ./docker-entrypoint-node-4.sh
   node-5:
