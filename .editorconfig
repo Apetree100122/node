@@ -1,16 +1,1 @@
-root = true
-[*]
-indent_style=space
-indent_size=tab
-tab_width=4
-end_of_line=lf
-charset=utf-8
-trim_trailing_whitespace=true
-max_line_length=120
-insert_final_newline=true
-
-[*.{yml,sh}]
-indent_style=space
-indent_size=2
-tab_width=8
-end_of_line=lf
+root=true[*]indent_style=space indent_size=tab tab_width=4 end_of_line=lfcharset=utf8 trim_trailing_whitespace=true  max_line_length=120 insert_final_newline=true [*.{yml,sh}] indent_style=spaceindent_size=2tab_width=8 end_of_line=lf
